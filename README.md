@@ -2,7 +2,6 @@
 
 ### Этапы выполнения:
 * Отсиффать запросы
-* Понять структуру API
 * Спарсить :)
 
 ## Сниффинг
@@ -62,3 +61,9 @@
         ]
     ]
   ```
+## Написание парсера
+Сначала я сконвертировал запросы из `Charles Proxy` из `CURL` в `Python` с помощью [curl2python](https://curlconverter.com).
+
+После было реализовано 2 функции:
+* [`get_categories`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC70) - возвращает список категорий
+* [`get_products`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC96) - возвращает список товаров в категории
