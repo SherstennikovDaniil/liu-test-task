@@ -64,6 +64,13 @@
 ## Написание парсера
 Сначала я сконвертировал запросы из `Charles Proxy` из `CURL` в `Python` с помощью [curl2python](https://curlconverter.com).
 
-После было реализовано 2 функции:
+Парсинг выполняется с помощью библиотеки [`requests`](https://pypi.org/project/requests/).
+Для сбора информации было реализовано 2 функции:
 * [`get_categories`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC70) - возвращает список категорий
 * [`get_products`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC96) - возвращает список товаров в категории
+  
+Для стандартизации данных был создан класс [`Product`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC19), который содержит в себе все необходимые поля для хранения информации о товаре.
+
+Так же была реализована функция [`process_products`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC50), которая обрабатывает список товаров, полученных с помощью `get_products`, и возвращает список объектов класса `Product`.
+
+И в конце была реализована функция [`write_to_csv`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC31), которая записывает список объектов класса `Product` в файл `{название категории}-{дата и время}.csv`.
