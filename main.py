@@ -31,8 +31,8 @@ logging.basicConfig(level=logging.INFO)
 def write_to_csv(
     name: str, data: List[Product], header: List[str] = CSV_HEADERS
 ) -> None:
-    with open(f"{name}-{datetime.now()}.csv", "w") as f:
-        writer = csv.writer(f, delimiter=";")
+    with open(f"{name}-{datetime.now()}.csv", "w", encoding="utf-8") as f:
+        writer = csv.writer(f, delimiter="	")
         writer.writerow(header)
         for row in data:
             writer.writerow(
