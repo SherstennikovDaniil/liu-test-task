@@ -74,3 +74,13 @@
 Так же была реализована функция [`process_products`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC50), которая обрабатывает список товаров, полученных с помощью [`get_products`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC96), и возвращает список объектов класса [`Product`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC19).
 
 И в конце была реализована функция [`write_to_csv`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC31), которая записывает список объектов класса [`Product`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC19) в файл `{название категории}-{дата и время}.csv`.
+
+Входная точка скрипта в функции [`main`](https://github.com/SherstennikovDaniil/liu-test-task/blob/main/main.py#LC132).
+
+Собранные данные находятся в папке [`data`](https://github.com/SherstennikovDaniil/liu-test-task/tree/main/data).
+---
+## Контакты
+Шерстенников Даниил
+* Telegram: [@DevilsServant](https://t.me/DevilsServant)
+* Почта: `sherswrk@yandex.ru`
+* Телефон: +79633031434
