@@ -6,6 +6,7 @@ from typing import Any, Dict, List, TypedDict
 from requests import get
 from requests.exceptions import JSONDecodeError
 
+
 CSV_HEADERS = [
     "Название",
     "Цена",
@@ -31,6 +32,7 @@ logging.basicConfig(level=logging.INFO)
 def write_to_csv(
     name: str, data: List[Product], header: List[str] = CSV_HEADERS
 ) -> None:
+    """Write data to csv file"""
     with open(f"{name}-{datetime.now()}.csv", "w", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter="	")
         writer.writerow(header)
@@ -48,11 +50,11 @@ def write_to_csv(
 
 
 def process_products(products: List[Dict[Any, Any]]) -> List[Product]:
+    """Convert json to Product"""
     result = []
     for product in products:
         prices = product["prices"]
         discount = prices["discount"]
-        # price_discount
         prod = Product(
             name=product["name"],
             price=prices["price_discount"]
@@ -68,6 +70,7 @@ def process_products(products: List[Dict[Any, Any]]) -> List[Product]:
 
 
 def get_categories(store: str = "324G") -> List[Dict[Any, Any]] | None:
+    """Get all available categories in store"""
     headers = {
         "Host": "5d.5ka.ru",
         "Accept": "application/json",
@@ -96,6 +99,7 @@ def get_categories(store: str = "324G") -> List[Dict[Any, Any]] | None:
 def get_category_products(
     category_id: int, offset: int = 0, store: str = "324G"
 ) -> List[Dict[Any, Any]] | None:
+    """Get products from category"""
     headers = {
         "Host": "5d.5ka.ru",
         "Accept": "application/json",
