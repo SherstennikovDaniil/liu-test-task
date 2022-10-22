@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 requests = "*"
 black = "*"
+mypy = "*"
+flake8 = "*"
 
 [dev-packages]
 
